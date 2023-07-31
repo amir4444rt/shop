@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\client\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +22,16 @@ Route::get('/', function () {
 Route::get('/panel', function () {
     return view('admin.home');
 });
+
+Route::get('/panel/category', function () {
+    return view('category.index');
+});
+
+
+    Route::resource('category',CategoryController::class);
+
+    Route::get('/',[HomeController::class,'index']);
+
+
+
 
